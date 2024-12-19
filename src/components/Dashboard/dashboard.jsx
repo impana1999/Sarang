@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion'; // Import motion from framer-motion
 import '../Dashboard/dashbard.css'; // Ensure the correct path for the stylesheet
+
 
 // Import images
 import logoImage from '../../assets/logo.png';
@@ -37,6 +39,7 @@ const Dashboard = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
   };
 
+
   return (
     <div className="dashboard">
       {/* Header Section */}
@@ -48,14 +51,13 @@ const Dashboard = () => {
       >
         <div className="overlay">
           <div className="content text-center">
-            <div className="top-right-nav a position-absolute">
-              <nav>
-                <a href="/about-us" className="nav-link">About Us</a>
-                <a href="/contact-us" className="nav-link">Contact Us</a>
-                <a href="/sign-up" className="nav-link">Sign Up</a>
+            <div className="top-right-nav ">
+              <nav className="top-right-nav " > 
+                <a href="/about-us" className="nav-link">About</a>
+                <a href="/contact-us" className="nav-link">Contact</a>
+                <a href="/sign-up" className="nav-link">SignIn</a>
               </nav>
             </div>
-
             <div className="logo-container position-absolute">
               <img src={logoImage} alt="Logo" className="logo" />
               <span className="logo-text">Sarang</span>
@@ -150,58 +152,68 @@ const Dashboard = () => {
       </section>
 
       {/* How Does it Work Section (Bootstrap grid) */}
-      <section className="how-it-works py-5">
-        <motion.h2
-          className="how-it-works-title text-center"
-          initial="hidden"
-          whileInView="visible"
-          variants={textVariants}
-          viewport={{ once: true }}
-        >
-          How Does It Work?
-        </motion.h2>
-        <motion.p
-          className="how-it-works-subtitle text-center"
-          initial="hidden"
-          whileInView="visible"
-          variants={textVariants}
-          viewport={{ once: true }}
-        >
-          You’re Just 3 Steps Away From A Great Date
-        </motion.p>
+      {/* How Does it Work Section */}
+<section className="how-it-works py-5">
+  <motion.h2
+    className="how-it-works-title text-center"
+    initial="hidden"
+    whileInView="visible"
+    variants={textVariants}
+    viewport={{ once: true }}
+  >
+    How Does It Work?
+  </motion.h2>
+  <motion.p
+    className="how-it-works-subtitle text-center"
+    initial="hidden"
+    whileInView="visible"
+    variants={textVariants}
+    viewport={{ once: true }}
+  >
+    You’re Just 3 Steps Away From A Great Date
+  </motion.p>
 
-        <div className="steps-container row justify-content-center">
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card step-card">
-              <img src={createProfileImage} className="card-img-top step-image" alt="Create Profile" />
-              <div className="card-body">
-                <h5 className="card-title">Create Profile</h5>
-                <p className="card-text">Join the Community: Build Your Profile and Discover a World of Connections</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card step-card">
-              <img src={connectImage} className="card-img-top step-image" alt="Connect" />
-              <div className="card-body">
-                <h5 className="card-title">Connect</h5>
-                <p className="card-text">Expand Your Social Horizons: Forge Meaningful Connections with New Faces!</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card step-card">
-              <img src={startDatingImage} className="card-img-top step-image" alt="Start Dating" />
-              <div className="card-body">
-                <h5 className="card-title">Start Dating</h5>
-                <p className="card-text">Love Begins Here: Your Journey to Happily Ever After Starts Now</p>
-              </div>
-            </div>
+  <div className="steps-container row justify-content-center">
+    {/* Motion-enabled step cards */}
+    {[
+      {
+        img: createProfileImage,
+        title: "Create Profile",
+        text: "Join the Community: Build Your Profile and Discover a World of Connections",
+      },
+      {
+        img: connectImage,
+        title: "Connect",
+        text: "Expand Your Social Horizons: Forge Meaningful Connections with New Faces!",
+      },
+      {
+        img: startDatingImage,
+        title: "Start Dating",
+        text: "Love Begins Here: Your Journey to Happily Ever After Starts Now",
+      },
+    ].map((step, index) => (
+      <motion.div
+        key={index}
+        className="col-lg-4 col-md-6 mb-4"
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.2 } },
+        }}
+        viewport={{ once: true }}
+      >
+        <div className="card step-card">
+          <img src={step.img} className="card-img-top step-image" alt={step.title} />
+          <div className="card-body">
+            <h5 className="card-title">{step.title}</h5>
+            <p className="card-text">{step.text}</p>
           </div>
         </div>
-      </section>
+      </motion.div>
+    ))}
+  </div>
+</section>
     </div>
   );
 };
