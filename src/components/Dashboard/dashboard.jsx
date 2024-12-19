@@ -218,22 +218,31 @@ const Dashboard = () => {
 </section>
 
 <section className="footer-header">
-        <div className="footer-title">
-          Welcome Again form Sarang
-        </div>
+  <motion.div
+    className="footer-content"
+    initial="hidden"
+    whileInView="visible"
+    variants={textVariants}
+    viewport={{ once: true }}
+  >
+    <div className="footer-title">
+      Welcome Again from Sarang
+    </div>
 
-        <div className="journey-content">
-          <div className="logo-container-bottom">
-            <img src={logoImage} alt="Logo" className="logo-bottom" />
-            <span className="logo-text-bottom">Sarang</span>
-          </div>
-        </div>
+    <div className="journey-content">
+      <div className="logo-container-bottom">
+        <img src={logoImage} alt="Logo" className="logo-bottom" />
+        <span className="logo-text-bottom">Sarang</span>
+      </div>
+    </div>
 
-        {/* Scroll to Top Button */}
-        <button className="scroll-to-top" onClick={scrollToTop}>
-          ^
-        </button>
-      </section>
+    {/* Scroll to Top Button */}
+    <button className="scroll-to-top" onClick={scrollToTop}>
+      ^
+    </button>
+  </motion.div>
+</section>
+
     </div>
   );
 };
