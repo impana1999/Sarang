@@ -35,7 +35,8 @@
   position: absolute;
   top: 40px;
   right: 50px;
-  display: flex;
+  display: flex; /* This will place the links side by side */
+
 }
 
 .top-right-nav a {
@@ -43,7 +44,6 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
-  margin-right: 30px;
 }
 
 .top-right-nav a:last-child {
@@ -82,6 +82,7 @@
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 20px;
+  font-style:normal
 }
 
 .subtitle {
@@ -94,17 +95,19 @@
   color: white;
   border: none;
   padding: 12px 24px;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
+  font-style: unset;
   border-radius: 25px;
   transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
-  background-color: #e6006f;
+  background-color: #0056b3; /* Darker background color on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
-
 /* Second Section with Left and Right Columns */
 .split-section {
   display: flex;
@@ -137,30 +140,35 @@
   font-size: 5rem;
   font-weight: bold;
   margin-bottom: 15px;
+  font-style: normal;
 }
 
 .section-text {
-  font-size: 2.8rem;
+  font-size: 2rem;
   margin-bottom: 20px;
+  color:#808080
 }
 
 /* Third Section: Start Your Journey */
 .start-your-journey {
-  background-color: #ff007f;
+  background-color: #ff0080;
   padding: 50px; /* Unified padding for consistency */
   text-align: center;
+  color: white;
 }
 
 .journey-title {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
   margin-bottom: 20px;
+  font-style: normal;
 }
 
 .journey-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
   gap: 30px;
   position: relative;
 }
@@ -186,7 +194,7 @@
   padding: 50px; /* Unified padding for consistency */
   text-align: center;
   background-color: #fff;
-  height: 90vh;;
+  height: 90vh;
 }
 
 .how-it-works-title {
@@ -198,6 +206,7 @@
   font-size: 6rem;
   margin-bottom: 30px;
   font-weight: bold;
+  font-style: normal;
 }
 
 .steps-container {
@@ -208,31 +217,34 @@
   flex-wrap: wrap;
 }
 
-.step {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: left;
-  margin-bottom: 20px;
+.step-card {
+  position: relative;
+  width: 100%;  /* Allow card to take full width */
 }
 
 .step-image {
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
+  display: block;  /* Make the image block-level for centering */
+  margin-left: auto;
+  margin-right: auto;  /* This centers the image inside the card */
+  width: 100px;  /* Set a fixed width */
+  height: 100px;  /* Set a fixed height */
+  object-fit: cover;  /* Maintain the aspect ratio */
 }
 
-.step-text h3 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.card-body {
+  padding-top: 20px;
+  text-align: center;  /* Center the text inside the card */
 }
 
-.step-text p {
-  font-size: 1.2rem;
+.card-title {
+  font-size: 1.4rem;
+  font-style: normal;
 }
-
+.card-text {
+  font-size: 1.4rem;
+  font-style: normal;
+  color:#808080
+}
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
   /* Header adjustments */

@@ -11,7 +11,7 @@ import leftImage from '../../assets/backgroundimage6.jpg';
 import createProfileImage from '../../assets/phone.png';
 import connectImage from '../../assets/dating.png';
 import startDatingImage from '../../assets/kiss.png';
-import journeyImage from '../../assets/kiss.png'; // New image for "Start Your Journey with Us"
+import journeyImage from '../../assets/relationships.png'; // New image for "Start Your Journey with Us"
 
 const backgroundImages = [
   backgroundImage1,
@@ -48,7 +48,7 @@ const Dashboard = () => {
       >
         <div className="overlay">
           <div className="content text-center">
-            <div className="top-right-nav position-absolute">
+            <div className="top-right-nav a position-absolute">
               <nav>
                 <a href="/about-us" className="nav-link">About Us</a>
                 <a href="/contact-us" className="nav-link">Contact Us</a>
