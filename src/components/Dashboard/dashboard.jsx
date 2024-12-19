@@ -39,7 +39,9 @@ const Dashboard = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
   };
 
-
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <div className="dashboard">
       {/* Header Section */}
@@ -214,6 +216,24 @@ const Dashboard = () => {
     ))}
   </div>
 </section>
+
+<section className="footer-header">
+        <div className="footer-title">
+          Welcome Again form Sarang
+        </div>
+
+        <div className="journey-content">
+          <div className="logo-container-bottom">
+            <img src={logoImage} alt="Logo" className="logo-bottom" />
+            <span className="logo-text-bottom">Sarang</span>
+          </div>
+        </div>
+
+        {/* Scroll to Top Button */}
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          ^
+        </button>
+      </section>
     </div>
   );
 };
