@@ -1,198 +1,306 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.header {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.top-right-nav {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  display: flex;
+}
+
+.top-right-nav a {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.top-right-nav a:last-child {
+  margin-right: 0;
+}
+
+.top-right-nav a:hover {
+  text-decoration: underline;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+}
+
+.content {
+  z-index: 2;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #ff007f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6006f;
+}
+
+/* Second Section with Left and Right Columns */
+.split-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-image {
+  width: 60%;
+  height: 100%; /* Ensure image fills the column height */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.right-column {
+  flex: 1;
+  padding: 50px; /* Adjusted to ensure equal padding */
+}
+
+.section-title {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-text {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+/* Third Section: Start Your Journey */
+.start-your-journey {
+  background-color: #ff007f;
+  padding: 50px; /* Unified padding for consistency */
+  text-align: center;
+}
+
+.journey-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.journey-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.journey-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: absolute;
+  left: 20px;
+  top: -100px;
+}
+
+.journey-text {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-top: 10px;
+}
+
+/* How it Works Section */
+.how-it-works {
+  padding: 50px; /* Unified padding for consistency */
+  text-align: center;
+  background-color: #fff;
+  height: 90vh;;
+}
+
+.how-it-works-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.how-it-works-subtitle {
+  font-size: 6rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.step-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.step-text h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.step-text p {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .top-right-nav {
+    top: 10px;
+    right: 10px;
+    gap: 15px;
   }
-  
-  /* Header Section */
-  .header {
+
+  .logo-container {
+    top: 10px;
+    left: 100px;
+  }
+
+  .logo-text {
+    font-size: 30px;
+  }
+
+  /* Third Section: Start Your Journey */
+  .journey-content {
+    flex-direction: column;
+    text-align: center;
     position: relative;
-    height: 100vh; /* Full viewport height */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-image 1s ease-in-out;
   }
-  
-  
-  /* Overlay Section */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Content inside the header */
-  .content {
-    z-index: 2;
-  }
-  
-  .logo {
-    width: 120px;
+
+  .journey-image {
+    position: static;
+    width: 200px;
+    height: 200px;
     margin-bottom: 20px;
   }
-  
-  .title {
-    font-size: 2.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .subtitle {
+
+  .journey-text {
     font-size: 1.2rem;
-    margin-bottom: 20px;
   }
-  
-  .cta-button {
-    background-color: #ff007f;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #e6006f;
-  }
-  
-  /* Second Section (Split) */
-  .split-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    align-items: center;
-  }
-  
-  .left-column {
-    flex: 1;
-  }
-  
-  .left-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .right-column {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  .section-text {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .cta-button {
-    background-color: #007bff; /* Blue button */
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* How Does It Work Section */
-  .how-it-works {
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .how-it-works-title {
-    font-size: 2.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .how-it-works-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-  }
-  
+
+  /* How it Works Section */
   .steps-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-  }
-  
-  .step {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
   }
-  
+
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .step-image {
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
+    width: 60px;
+    height: 60px;
   }
-  
+
   .step-text h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
   }
-  
+
   .step-text p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .steps-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .step {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .step-image {
-      width: 60px;
-      height: 60px;
-    }
-  
-    .step-text h3 {
-      font-size: 1.5rem;
-    }
-  
-    .step-text p {
-      font-size: 1rem;
-    }
+
+  /* Fourth Section: Responsive layout */
+  .fourth-content {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .fourth-content .item {
+    max-width: 100%;
+  }
+}
