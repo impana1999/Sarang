@@ -42,6 +42,7 @@ const About = () => {
           <div className="content text-center">
             <div className="top-right-nav">
               <nav className="top-right-nav">
+                <a href="/" className="nav-link">Home</a> {/* Home Button */}
                 <a href="/about-us" className="nav-link">About</a>
                 <a href="/contact-us" className="nav-link">Contact</a>
                 <a href="/sign-up" className="nav-link">SignIn</a>
@@ -84,8 +85,8 @@ const About = () => {
             variants={textVariants}
             viewport={{ once: true }}
           >
-            Sarang is a dynamic and inclusive online community that aims to foster meaningful connections. 
-            Our platform allows people to engage with like-minded individuals, share their passions, 
+            Sarang is a dynamic and inclusive online community that aims to foster meaningful connections.
+            Our platform allows people to engage with like-minded individuals, share their passions,
             and explore new relationships in a safe and welcoming environment.
           </motion.p>
         </div>
@@ -110,13 +111,12 @@ const About = () => {
             variants={textVariants}
             viewport={{ once: true }}
           >
-            Sarang brings people together through a platform built on trust, mutual respect, and shared values. 
-            Whether you're looking for friendship, love, or anything in between, Sarang is the place to begin your journey. 
+            Sarang brings people together through a platform built on trust, mutual respect, and shared values.
+            Whether you're looking for friendship, love, or anything in between, Sarang is the place to begin your journey.
             Join us today and be a part of a growing community that embraces diversity and connection.
           </motion.p>
         </div>
       </section>
-
     </div>
   );
 };
