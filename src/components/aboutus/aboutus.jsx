@@ -43,7 +43,6 @@ const About = () => {
             <div className="top-right-nav">
               <nav className="top-right-nav">
                 <a href="/" className="nav-link">Home</a> {/* Home Button */}
-                <a href="/about-us" className="nav-link">About</a>
                 <a href="/contact-us" className="nav-link">Contact</a>
                 <a href="/sign-up" className="nav-link">SignIn</a>
               </nav>
