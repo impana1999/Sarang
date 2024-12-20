@@ -6,97 +6,200 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .contact-page .logo-text {
+}
+
+.contact-page .logo-text {
     color: white;
-  }
-  
-  .contact-page .logo-container {
+}
+
+.contact-page .logo-container {
     position: absolute;
     top: 20px;
     left: 20px;
     display: flex;
     align-items: center;
-  }
-  
-  .contact-page .logo {
+}
+
+.contact-page .logo {
     width: 50px;
     height: auto;
     margin-right: 10px;
-  }
-  
-  .contact-page .top-right-nav {
+}
+
+.contact-page .top-right-nav {
     position: absolute;
     top: 20px;
     right: 20px;
-  }
-  
-  .contact-page .nav-link {
+}
+
+.contact-page .nav-link {
     color: white;
     margin-left: 15px;
     text-decoration: none;
-  }
-  
-  .contact-page .title {
+}
+
+.contact-page .title {
     font-size: 3rem;
     color: white;
-  }
-  
-  /* Contact Form Section */
-  .contact-form-section {
+}
+
+/* Contact Form Section */
+.contact-form-section {
     padding: 50px 0;
     background-color: #f9f9f9;
-  }
-  
-  .contact-title {
+}
+
+.contact-title {
     font-size: 2rem;
     color: #ff007f;
-  }
-  
-  .contact-card {
+}
+
+.contact-card {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 60%;
     margin: 0 auto;
-  }
-  
-  .contact-form .form-group {
+}
+
+.contact-form .form-group {
     margin-bottom: 20px;
-  }
-  
-  .contact-form .form-group label {
+}
+
+.contact-form .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-  }
-  
-  .contact-form .form-group input,
-  .contact-form .form-group textarea {
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .contact-form .form-group textarea {
+}
+
+.contact-form .form-group textarea {
     resize: vertical;
     height: 150px;
-  }
-  
-  .contact-form .submit-btn {
+}
+
+.contact-form .submit-btn {
     padding: 10px 20px;
     background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .contact-form .submit-btn:hover {
+}
+
+.contact-form .submit-btn:hover {
     background-color: rgba(0, 0, 139, 0.536);
-  }
-  
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-page .header {
+        height: 40vh; /* Adjust header size on smaller screens */
+    }
+
+    .contact-page .logo-container {
+        top: 10px;
+        left: 10px; /* Reduce logo position for smaller screens */
+    }
+
+    .contact-page .logo {
+        width: 40px; /* Adjust logo size for mobile */
+    }
+
+    .contact-page .title {
+        font-size: 2rem; /* Reduce title size for smaller screens */
+        text-align: center;
+        padding: 0 20px; /* Add padding for mobile */
+    }
+
+    .contact-page .top-right-nav {
+        top: 10px;
+        right: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the navigation links */
+    }
+
+    .contact-page .nav-link {
+        font-size: 14px; /* Reduce font size for navigation */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    /* Contact Card Styling */
+    .contact-card {
+        width: 80%; /* Increase width for smaller screens */
+        padding: 20px; /* Adjust padding for mobile */
+    }
+
+    .contact-title {
+        font-size: 1.8rem; /* Reduce font size of contact title */
+        text-align: center;
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        font-size: 14px; /* Reduce input font size */
+        padding: 8px; /* Reduce padding in inputs */
+    }
+
+    .contact-form .submit-btn {
+        padding: 8px 16px; /* Adjust submit button size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens (e.g., phones) */
+    .contact-page .header {
+        height: 35vh; /* Make header smaller on very small screens */
+    }
+
+    .contact-page .logo {
+        width: 35px; /* Further reduce logo size */
+    }
+
+    .contact-page .title {
+        font-size: 1.5rem; /* Reduce title size more for very small screens */
+    }
+
+    .contact-page .top-right-nav {
+        top: 5px; /* Adjust position of top-right nav for very small screens */
+        right: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-page .nav-link {
+        font-size: 12px; /* Reduce font size further */
+    }
+
+    .contact-card {
+        width: 90%; /* Increase width of contact card for very small screens */
+    }
+
+    .contact-title {
+        font-size: 1.6rem; /* Adjust contact title size */
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        font-size: 12px; /* Further reduce font size for form fields */
+        padding: 6px; /* Adjust padding */
+    }
+
+    .contact-form .submit-btn {
+        padding: 6px 12px; /* Adjust button size for very small screens */
+    }
+
+    
+}
+

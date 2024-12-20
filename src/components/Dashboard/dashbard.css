@@ -1,8 +1,15 @@
-/* General Reset */
+General Reset
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Container to Center and Constrain Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Header Section */
@@ -15,6 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .overlay {
@@ -23,75 +31,66 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 20px;
 }
 
+/* Navigation */
 .top-right-nav {
   position: absolute;
-  top: 10px;
-  right: 50px;
+  top: 20px;
+  right: 20px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  transition: color 0.3s, text-shadow 0.3s;
+  gap: 15px;
+  flex-wrap: nowrap; /* Always keep navigation horizontal */
 }
 
 .top-right-nav a {
-  font-size: 30px;
+  font-size: 18px;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-.top-right-nav a:last-child {
-  margin-right: 0;
+  transition: color 0.3s ease;
 }
 
 .top-right-nav a:hover {
-  color: rgba(255, 255, 255, 0.711); /* Change text color on hover */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  color: rgbayyyyyy(255, 255, 255, 0.519);
 }
 
+/* Logo */
 .logo-container {
-  display: flex;
-  align-items: center;
   position: absolute;
   top: 20px;
   left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap; /* Always keep logo horizontal */
 }
 
 .logo {
-  width: 80px;
+  width: 40px;
   height: auto;
 }
 
 .logo-text {
-  font-size: 40px;
+  font-size: 22px;
   font-weight: bold;
   color: white;
-  margin-left: 10px;
 }
 
-.content {
-  z-index: 2;
-}
-
+/* Main Content */
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-  font-style: normal;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .cta-button {
@@ -99,75 +98,76 @@
   color: white;
   border: none;
   padding: 12px 24px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  cursor: pointer;
-  font-style: unset;
+  font-size: 1rem;
   border-radius: 25px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0px 4px 6px rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #ff0080b9; /* Darker background color on hover */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  background-color: #ff005f;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Second Section with Left and Right Columns */
+/* Split Section */
 .split-section {
   display: flex;
-  justify-content: space-between;
-  padding: 50px;
+  gap: 30px;
   align-items: center;
-  height: 100vh;
+  padding: 50px 20px;
 }
 
-.left-column {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.left-image {
-  width: 60%;
-  height: 100%;
-  object-fit: cover;
+.split-section img {
+  width: 100%;
+  max-width: 500px;
   border-radius: 8px;
 }
 
-.right-column {
+.split-section .content {
   flex: 1;
-  padding: 50px;
 }
 
 .section-title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 15px;
-  font-style: normal;
+  margin-bottom: 20px;
 }
 
 .section-text {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #808080;
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
 }
 
-/* Third Section: Start Your Journey */
+/* Journey Section */
 .start-your-journey {
   background-color: #ff0080;
-  padding: 50px;
-  text-align: center;
+  padding: 60px 20px;
   color: white;
+  text-align: center;
 }
 
+
+
+.journey-content {
+  display: flex;
+  flex-direction: row; /* Change to row layout (image left, text right) */
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.journey-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
 .journey-title {
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
 .journey-content {
   display: flex;
   justify-content: center;
@@ -178,11 +178,11 @@
 }
 
 .journey-image {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
+  width: 100%; /* Allow it to scale fluidly */
+  max-width: 150px; /* Maximum size for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
   border-radius: 8px;
-  position: absolute;
   left: 20px;
   top: -100px;
 }
@@ -193,12 +193,261 @@
   margin-top: 10px;
 }
 
-/* How it Works Section */
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  /* Adjustments for Laptops */
+  .top-right-nav {
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+  }
+
+  .logo-container {
+    top: 10px;
+    left: 10px;
+    gap: 8px;
+  }
+
+  .split-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .split-section img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .section-text {
+    font-size: 1rem;
+  }
+
+  .start-your-journey h2 {
+    font-size: 2rem;
+  }
+
+  .journey-text {
+    font-size: 1rem;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  /* Mobile Adjustments */
+  .top-right-nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    flex-wrap: wrap; /* Allow wrapping when there isn't enough space */
+    gap: 10px; /* Reduced gap between links */
+    justify-content: center; /* Center the navigation links */
+    width: 100%; /* Ensure the nav takes full width on small screens */
+  }
+
+  .top-right-nav a {
+    font-size: 16px; /* Slightly smaller font size for mobile */
+    padding: 5px 10px; /* Adjust padding to make links more compact */
+  }
+
+  .logo-container {
+    justify-content: center; /* Center the logo for better alignment */
+    gap: 5px;
+  }
+
+  .logo {
+    width: 30px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-text {
+    font-size: 1rem;
+  }
+
+  .start-your-journey h2 {
+    font-size: 2rem;
+  }
+
+  .journey-text {
+    font-size: 1rem;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .top-right-nav {
+    top: 6px; /* Ensure it's not too high on smaller screens */
+    right: -50px; /* Keep right margin consistent */
+    flex-wrap: wrap; /* Ensure wrapping */
+    justify-content: center; /* Center the nav links */
+  }
+
+  .top-right-nav a {
+    font-size: 14px; /* Further reduce font size */
+    padding: 5px 8px; /* Adjust padding to make links more compact */
+  }
+
+  .logo-container {
+    justify-content: center; /* Center the logo in small screens */
+    gap: 8px;
+  }
+
+  .logo {
+    width: 25px; /* Further reduce logo size for smaller screens */
+  }
+
+  .logo-text {
+    font-size: 16px; /* Reduce font size of logo text */
+  }
+}
+/* /* Footer Section */
+.footer-header {
+  background-color: #ff007f; /* Solid pink background */
+  padding: 20px;          /* Smaller height for footer */
+  position: relative;
+  text-align: center;
+  height: 70px;            /* Set a fixed height for alignment */
+  display: flex;
+  align-items: center;      /* Center content vertically */
+  justify-content: center;  /* Center content horizontally */
+}
+
+/* Footer Content */
+.footer-content {
+  position: relative;       /* Allow absolute positioning of children */
+  height: 100%;             /* Ensure it fills the footer-header */
+  width: 100%;
+}
+
+/* Welcome Text (Center) */
+.footer-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 50%;                 /* Center vertically */
+  left: 50%;                /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for true centering */
+  z-index: 1;               /* Ensure it is above other elements */
+}
+
+/* Logo Bottom Left */
+.logo-container-bottom {
+  position: absolute;
+  bottom: 0px;             /* Align to the bottom */
+  left: 0px;               /* Align to the left */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-bottom {
+  width: 30px;              /* Adjust logo size */
+  height: auto;
+}
+
+.logo-text-bottom {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Arrow Bottom Right */
+.scroll-to-top {
+  position: absolute;
+  bottom: 0px;             /* Align to the bottom */
+  right: 0px;              /* Align to the right */
+  background-color: white;
+  color: #ff007f;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.189);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .footer-title {
+    font-size: 1.5rem;
+  }
+
+  .logo-bottom {
+    width: 30px;            /* Reduce logo size */
+  }
+
+  .logo-text-bottom {
+    font-size: 16px;
+  }
+
+  .scroll-to-top {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  .logo-bottom {
+    width: 25px;            /* Further reduce logo size */
+  }
+
+  .scroll-to-top {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}/* How it Works Section */
 .how-it-works {
-  padding: 50px;
+  padding: 50px 20px;
   text-align: center;
   background-color: #fff;
-  height: 90vh;
+  height: auto; /* Adjust to auto for responsiveness */
 }
 
 .how-it-works-title {
@@ -214,162 +463,71 @@
 
 .steps-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
-  gap: 60px;
+  gap: 30px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .step-card {
-  position: relative;
-  width: 100%;
+  width: 100%; /* Full width on mobile */
+  max-width: 400px; /* Set max width for a rectangular look */
+  margin-bottom: 30px; /* Space between cards */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+  padding: 20px 30px; /* Adjust padding to make the card more rectangular */
+  border-radius: 10px; /* Slightly increased border-radius */
+  background-color: #ffffff; /* White background */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .step-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 100px;
-  height: 100px;
+  width: 80px; /* Adjust image width */
+  height: 80px; /* Adjust image height */
   object-fit: cover;
 }
 
 .card-body {
-  padding-top: 30px;
-  text-align: center;
+  padding-top: 20px;
 }
 
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .card-text {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #808080;
 }
 
-/* Footer Section: Start Your Journey with Us */
-.footer-header {
-  background-color: #ff0080;
-  padding: 10px 20px;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.footer-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.journey-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.logo-container-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-.logo-bottom {
-  width: 40px;
-  height: auto;
-}
-
-.logo-text-bottom {
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-  margin-left: 15px;
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  background-color: white;
-  color: #ff0080;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.scroll-to-top:hover {
-  background-color: #ff0080;
-}
-
-.scroll-to-top:focus {
-  outline: none;
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  /* Header adjustments */
-  .top-right-nav {
-    top: 10px;
-    right: 10px;
-    gap: 15px;
+@media (max-width: 480px) {
+  .how-it-works-subtitle {
+    font-size: 2rem; /* Further reduce subtitle size on very small screens */
   }
 
-  .logo-container {
-    top: 10px;
-    left: 100px;
-  }
-
-  .logo-text {
-    font-size: 30px;
-  }
-
-  /* Third Section: Start Your Journey */
-  .journey-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .journey-image {
-    position: static;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-
-  .journey-text {
-    font-size: 1.2rem;
-  }
-
-  /* How it Works Section */
   .steps-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack the cards vertically on small screens */
+    gap: 20px;
   }
 
-  .step {
-    flex-direction: column;
-    align-items: center;
+  .step-card {
+    width: 100%; /* Full width on very small screens */
   }
 
-  .step-image {
-    width: 60px;
-    height: 60px;
+  .card-title {
+    font-size: 1.2rem; /* Smaller title for small screens */
   }
 
-  .step-text h3 {
-    font-size: 1.5rem;
-  }
-
-  .step-text p {
-    font-size: 1rem;
+  .card-text {
+    font-size: 1rem; /* Adjust text size for very small screens */
   }
 }
+
