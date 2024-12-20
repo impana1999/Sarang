@@ -34,14 +34,14 @@
   }
   
   .about-page .logo-text {
-    font-size: 24px;
+    font-size: 30px;
     color: white;
     margin-left: 10px;
   }
   
   .about-page .top-right-nav {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
   }
   
@@ -52,9 +52,9 @@
   }
   
   .about-page .nav-link:hover {
-    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.711); /* Change text color on hover */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   }
-  
   /* About Section */
   .about-us-section {
     background-color: #34495e; /* Darker blue background */
@@ -94,4 +94,16 @@
     margin-left: auto;
     margin-right: auto;
   }
+  
+
+  .cartoon-img {
+    width: 100px; /* Adjust size of the cartoon elements */
+    height: auto;
+    transition: transform 0.3s ease; /* Optional for hover effect */
+  }
+  
+  .cartoon-element1, .cartoon-element2 {
+    z-index: 1; /* Ensure they are above other elements */
+  }
+  
   

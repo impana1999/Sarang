@@ -4,7 +4,7 @@ import '../aboutus/aboutus.css'; // Ensure the correct path for the stylesheet
 
 // Import images
 import logoImage from '../../assets/logo.png'; // Use the same logo image
-import backgroundImage1 from '../../assets/my.gif'; // Just as an example, you can use any background
+import backgroundImage1 from '../../assets/about1.jpg'; // Just as an example, you can use any background
 
 const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
