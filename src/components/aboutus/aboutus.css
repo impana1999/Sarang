@@ -40,18 +40,19 @@
 }
 
 .about-page .top-right-nav {
-  position: absolute;
+  position: fixed; /* Fix to the top-right corner */
   top: 20px;
   right: 20px;
   display: flex;
-  gap: 20px; /* Ensure gap between navigation items */
+  flex-direction: row; /* Keep the navigation horizontal by default */
+  gap: 10px; /* Space between items */
+  align-items: flex-end; /* Align to the right */
 }
 
 .about-page .nav-link {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  margin-left: 20px;
 }
 
 .about-page .nav-link:hover {
@@ -99,114 +100,36 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1024px) {
+
 /* Adjustments for Tablets */
-.about-page .logo-container {
+@media (max-width: 1024px) {
+  .about-page .logo-container {
     top: 15px;
     left: 15px;
-}
+  }
 
-.about-page .logo {
+  .about-page .logo {
     width: 35px; /* Adjust logo size */
     height: 35px;
-}
+  }
 
-.about-page .logo-text {
+  .about-page .logo-text {
     font-size: 20px; /* Adjust font size */
-}
+  }
 
-.about-page .top-right-nav {
+  .about-page .top-right-nav {
     top: 15px;
     right: 15px;
-}
+  }
 
-.about-page .nav-link {
+  .about-page .nav-link {
     font-size: 14px; /* Adjust font size for smaller screens */
     margin-left: 15px; /* Adjust margin for better spacing */
-}
-}
-
-@media (max-width: 768px) {
-/* Mobile Adjustments */
-.about-page .logo-container {
-    top: 10px;
-    left: 10px;
-}
-
-.about-page .logo {
-    width: 30px; /* Reduce logo size */
-    height: 30px;
-}
-
-.about-page .logo-text {
-    font-size: 18px; /* Reduce font size */
-}
-
-.about-page .top-right-nav {
-    top: 10px; /* Adjust top position */
-    right: 10px; /* Adjust right position */
-    flex-wrap: wrap; /* Allow items to wrap when there is not enough space */
-    gap: 10px; /* Reduce space between links */
-    justify-content: center; /* Center navigation links */
-    width: 100%; /* Make sure the navigation takes full width */
-}
-
-.about-page .nav-link {
-    font-size: 12px; /* Further reduce font size */
-    padding: 5px 10px; /* Adjust padding */
-}
-}
-
-@media (max-width: 480px) {
-/* Adjustments for Small Screens (Mobile Portrait) */
-.about-page .logo-container {
-    top: 8px;
-    left: 8px;
-}
-
-.about-page .logo {
-    width: 25px; /* Further reduce logo size */
-    height: 25px;
-}
-
-.about-page .logo-text {
-    font-size: 16px; /* Smaller font size */
-}
-
-.about-page .top-right-nav {
-  top: 10px; /* Adjust top position */
-  right: 10px; /* Adjust right position */
-  flex-wrap: wrap; /* Allow items to wrap when there is not enough space */
-  gap: 5px; /* Reduced gap between links */
-  justify-content: center; /* Center navigation links */
-  width: 100%; /* Make sure the navigation takes full width */
-}
-
-.about-page .nav-link {
-  font-size: 12px; /* Further reduce font size */
-  padding: 5px 8px; /* Adjust padding */
-  margin: 0; /* Remove margin to reduce space between links */
-}
-
-/* Mobile Adjustments for About Page */
-
-
-}
-@media (max-width: 768px) {
-  .about-page .top-right-nav {
-    top: 6px; /* Ensure it's not too high on smaller screens */
-    right: -50px; /* Keep right margin consistent */
-    flex-wrap: wrap; /* Ensure wrapping */
-    justify-content: center; /* Center the nav links */
-    width: 100%; /* Make sure the navigation takes full width */
   }
+}
 
-  .about-page .top-right-nav a {
-    font-size: 14px; /* Further reduce font size */
-    padding: 5px 8px; /* Adjust padding to make links more compact */
-  }
-
-  /* Adjust logo container for smaller screens */
+/* Mobile Adjustments (for screens <= 768px) */
+@media (max-width: 768px) {
   .about-page .logo-container {
     top: 10px;
     left: 10px;
@@ -218,6 +141,66 @@
   }
 
   .about-page .logo-text {
-    font-size: 18px; /* Adjust font size for small screens */
+    font-size: 18px; /* Reduce font size */
+  }
+
+  .about-page .top-right-nav {
+    top: 10px;
+    right: 10px;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Reduce space between links */
+    justify-content: center; /* Center navigation links */
+    width: auto; /* Make sure the navigation takes only the necessary width */
+  }
+
+  .about-page .nav-link {
+    font-size: 12px; /* Further reduce font size */
+    padding: 5px 10px; /* Adjust padding */
+  }
+}
+
+/* Adjustments for Small Screens (Mobile Portrait <= 480px) */
+@media (max-width: 480px) {
+  .about-page .logo-container {
+    top: 8px;
+    left: 8px;
+  }
+
+  .about-page .logo {
+    width: 25px; /* Further reduce logo size */
+    height: 25px;
+  }
+
+  .about-page .logo-text {
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .about-page .top-right-nav {
+    top: 10px;
+    right: 10px;
+    flex-direction: column; /* Ensure vertical stacking */
+    gap: 5px; /* Reduced gap between links */
+    justify-content: center; /* Center navigation links */
+    width: auto; /* Make sure the navigation takes only the necessary width */
+  }
+
+  .about-page .nav-link {
+    font-size: 12px; /* Further reduce font size */
+    padding: 5px 8px; /* Adjust padding */
+    margin: 0; /* Remove margin to reduce space between links */
+  }
+
+  .about-us-section .about-title {
+    font-size: 28px; /* Adjust title size for small screens */
+  }
+
+  .about-us-section .about-text,
+  .additional-info .info-text {
+    font-size: 16px; /* Reduce text size for readability */
+    padding: 0 10px; /* Add some padding for small screens */
+  }
+
+  .additional-info .info-title {
+    font-size: 28px; /* Adjust title size */
   }
 }
