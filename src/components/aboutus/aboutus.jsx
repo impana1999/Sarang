@@ -16,7 +16,7 @@ const About = () => {
     }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  },  [backgroundImages.length]);
 
   const backgroundImages = [
     backgroundImage1,
