@@ -1,4 +1,4 @@
-import {  signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {  signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase"; // Ensure this is the correct path to your firebase.ts
 
 export const googleLogin = async () => {

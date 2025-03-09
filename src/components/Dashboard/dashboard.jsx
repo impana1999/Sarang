@@ -26,7 +26,7 @@ const Dashboard = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  },  [backgroundImages.length]);
 
   // Define animation variants for text
   const textVariants = {
@@ -96,7 +96,7 @@ const Dashboard = () => {
             viewport={{ once: true }}
           >
             <div className="col-lg-6 col-md-12 mb-4">
-              <img src={leftImage} alt="Left Section Image" className="left-image img-fluid" />
+              <img src={leftImage} alt="A couple enjoying a sunset" className="left-image img-fluid" />
             </div>
 
             <div className="col-lg-6 col-md-12 mb-4">
