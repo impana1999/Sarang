@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 // Remove this if not used
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 import '../Dashboard/dashbard.css'; // Ensure the correct path for the stylesheet
 
@@ -25,10 +25,10 @@ const Dashboard = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-    }, 5000);
+    }, );
 
     return () => clearInterval(interval);
-  }, []);
+  }, [backgroundImages.length]);
 
   // Define animation variants for text
   const textVariants = {
