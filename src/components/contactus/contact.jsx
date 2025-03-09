@@ -8,7 +8,10 @@ import backgroundImage1 from '../../assets/about1.jpg'; // You can use any backg
 
 const Contact = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const backgroundImages = [
+    backgroundImage1,
+    // You can add more images if needed.
+  ];
   // Update background image every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,10 +21,7 @@ const Contact = () => {
     return () => clearInterval(interval);
   },  [backgroundImages.length]);
 
-  const backgroundImages = [
-    backgroundImage1,
-    // You can add more images if needed.
-  ];
+ 
 
   const [formData, setFormData] = useState({
     name: '',

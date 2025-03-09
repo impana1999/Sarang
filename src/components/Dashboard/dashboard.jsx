@@ -26,7 +26,7 @@ const Dashboard = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  },  [backgroundImages.length]);
+  },  []);
 
   // Define animation variants for text
   const textVariants = {
