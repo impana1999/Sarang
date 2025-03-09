@@ -4,6 +4,7 @@ import Header from './components/Dashboard/dashboard'; // Import Header (Dashboa
 import About from './components/aboutus/aboutus'; // Import About component
 import Contact from './components/contactus/contact'; // Import About component
 import SignIn from './components/signIn/signin'; // Import About component
+import Feed from './components/feed/feed'
 import './App.css'; // Import your stylesheet
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
          {/* Route for About page */}
          <Route path="/sign-up" element={<SignIn />} />
           
+         <Route path="/Feed" element={<Feed />} />
         </Routes>
       </div>
     </Router>

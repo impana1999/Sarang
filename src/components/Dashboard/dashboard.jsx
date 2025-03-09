@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
+// Remove this if not used
+import { NavLink } from "react-router-dom";
+
 import '../Dashboard/dashbard.css'; // Ensure the correct path for the stylesheet
 
 // Import images
@@ -87,7 +89,7 @@ const Dashboard = () => {
         </header>
 
         {/* Second Section with Left and Right Columns */}
-        <section className="split-section container-fluid">
+        <section className="split-section container">
           <motion.div
             className="row align-items-center"
             initial="hidden"
